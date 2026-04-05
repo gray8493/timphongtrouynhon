@@ -1,0 +1,182 @@
+<div class="flex min-h-screen w-full overflow-hidden">
+
+  <!-- Left Side: Visual Experience (60%) -->
+  <div class="hidden lg:flex lg:w-[60%] relative overflow-hidden">
+    <!-- Overlay -->
+    <div class="absolute inset-0 z-10" style="background-color: rgba(23,92,120,0.2); mix-blend-mode: multiply;"></div>
+
+    <!-- Background Image -->
+    <div
+      class="absolute inset-0 bg-cover bg-center auth-bg-image"
+      style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC2Qmb90E4ge4JGQVpjH2dr54sV73z0-KBSZmCkGKzgc6nc4WO4SiUvn9hBQYpn98oZx2RXWnHCkpJ1R3-tYbUdp0QYPhdbMLSOvVfIkFNsUhfN8A7ksyoZMVm0NErDCv6FJeTleTXP_1_FPYWcs2S0oKXuWgemM4XTUUCI4nHF8BdakJu6kni7jXAbo4cTESlwBIIOx5X-Lg6ywTMcVjOYG878HAoqAf7P7n-jv2-jEGO3iUX5ZiGVBC9vQKR8LUpMpt5pKlsHvIaS');"
+    ></div>
+
+    <!-- Branding Overlay -->
+    <div class="relative z-20 flex flex-col justify-between h-full p-12 text-white w-full">
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined" style="font-size:36px;">apartment</span>
+        <span class="text-2xl font-bold tracking-tight">Quy Nhon Rentals</span>
+      </div>
+
+      <!-- Tagline -->
+      <div>
+        <h1 class="text-5xl font-light leading-tight max-w-md">
+          Start your hosting journey today.
+        </h1>
+        <p class="mt-4 text-lg max-w-sm" style="color: rgba(255,255,255,0.8);">
+          Register now to connect your coastal properties with thousands of potential renters.
+        </p>
+      </div>
+
+      <!-- Footer text -->
+      <div class="text-sm font-medium tracking-widest uppercase" style="opacity: 0.6;">
+        © 2024 Quy Nhon Rental Management
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Side: Register Form (40%) -->
+  <div class="w-full lg:w-[40%] flex items-center justify-center p-8 overflow-y-auto" style="background-color: #f6f7f8;">
+    <div class="w-full max-w-md space-y-8 py-8">
+
+      <!-- Card -->
+      <div class="bg-white p-8 rounded-xl shadow-sm border" style="border-color: #e2e8f0;">
+
+        <!-- Header -->
+        <div class="flex flex-col space-y-2 text-center mb-8">
+          <h2 class="text-2xl font-semibold tracking-tight">Create an Account</h2>
+          <p class="text-sm" style="color: #64748b;">
+            Register your property to get started
+          </p>
+        </div>
+
+        <!-- Form -->
+        <form class="space-y-5" ng-submit="register()">
+          <!-- Full Name -->
+          <div class="space-y-2">
+            <label class="text-sm font-medium leading-none" for="fullName">
+              Full Name
+            </label>
+            <input
+              class="form-input"
+              id="fullName"
+              ng-model="fullName"
+              placeholder="John Doe"
+              type="text"
+              required
+            >
+          </div>
+
+          <!-- Username -->
+          <div class="space-y-2">
+            <label class="text-sm font-medium leading-none" for="username">
+              Username
+            </label>
+            <input
+              class="form-input"
+              id="username"
+              ng-model="username"
+              placeholder="johndoe123"
+              type="text"
+              required
+            >
+          </div>
+
+          <!-- Phone -->
+          <div class="space-y-2">
+            <label class="text-sm font-medium leading-none" for="phone">
+              Phone Number
+            </label>
+            <input
+              class="form-input"
+              id="phone"
+              ng-model="phone"
+              placeholder="0123 456 789"
+              type="tel"
+              required
+            >
+          </div>
+
+          <!-- Password -->
+          <div class="space-y-2">
+            <label class="text-sm font-medium leading-none" for="regPassword">
+              Password
+            </label>
+            <input
+              class="form-input"
+              id="regPassword"
+              ng-model="password"
+              placeholder="••••••••"
+              type="password"
+              required
+            >
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="space-y-2">
+            <label class="text-sm font-medium leading-none" for="confirmPassword">
+              Confirm Password
+            </label>
+            <input
+              class="form-input"
+              id="confirmPassword"
+              ng-model="confirmPassword"
+              placeholder="••••••••"
+              type="password"
+              required
+            >
+          </div>
+
+          <!-- Submit -->
+          <button
+            class="btn btn-primary w-full h-12 text-sm font-medium mt-2"
+            type="submit"
+          >
+            Create Account
+          </button>
+        </form>
+
+        <!-- Divider -->
+        <div class="relative my-8">
+          <div class="absolute inset-0 flex items-center">
+            <span class="w-full border-t" style="border-color: #e2e8f0;"></span>
+          </div>
+          <div class="relative flex justify-center text-xs uppercase">
+            <span class="bg-white px-2" style="color: #64748b;">
+              Or continue with
+            </span>
+          </div>
+        </div>
+
+        <!-- Google Button -->
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium h-12 px-4 py-2 w-full gap-2 border bg-transparent transition-colors hover:bg-slate-50 cursor-pointer"
+          style="border-color: #e2e8f0;"
+          type="button"
+          ng-click="registerWithGoogle()"
+        >
+          <svg aria-hidden="true" class="h-4 w-4" role="img" viewBox="0 0 488 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" fill="currentColor"/>
+          </svg>
+          Sign up with Google
+        </button>
+
+        <!-- Login link -->
+        <p class="mt-8 text-center text-sm" style="color: #64748b;">
+          Already have an account?
+          <a class="font-semibold hover:underline underline-offset-4" style="color: #175c78;" href="#!/login">
+            Sign in
+          </a>
+        </p>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="flex justify-center gap-6 text-xs" style="color: #94a3b8;">
+        <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+        <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+        <a class="hover:text-primary transition-colors" href="#">Support</a>
+      </div>
+    </div>
+  </div>
+</div>

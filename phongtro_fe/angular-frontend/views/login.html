@@ -1,0 +1,142 @@
+<div class="flex min-h-screen w-full overflow-hidden">
+  
+  <!-- Left Side: Visual Experience (60%) -->
+  <div class="hidden lg:flex lg:w-[60%] relative overflow-hidden">
+    <!-- Overlay -->
+    <div class="absolute inset-0 z-10" style="background-color: rgba(23,92,120,0.2); mix-blend-mode: multiply;"></div>
+    
+    <!-- Background Image -->
+    <div
+      class="absolute inset-0 bg-cover bg-center auth-bg-image"
+      style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUv-HUjQqN8r2DsFC8jEdDaRZEKmfNGFdUcoQBybhvUrhtqn4qw4tZMtVYNAcEHWYjl7Ypi998XdoVaVEfmsM5qhG67JQptMZVGa8cjbosCThHJKP0jZmlmWHVB0bnbBhyz9lRwUEj5RJpLUk6thZuE3sbBejXm4ij1diwyeBfF3rQJP26WNCl0apI6H-LitzI3T2wFYzEHiF8aPpiVUpJg9n3tdKoM5-yUIHrbEbJD6kTDCQ_DZF2qfhY6adFZj5SO5IzpKvyOQP2');"
+    ></div>
+
+    <!-- Branding Overlay -->
+    <div class="relative z-20 flex flex-col justify-between h-full p-12 text-white w-full">
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined" style="font-size:36px;">apartment</span>
+        <span class="text-2xl font-bold tracking-tight">Quy Nhon Rentals</span>
+      </div>
+
+      <!-- Tagline -->
+      <div>
+        <h1 class="text-5xl font-light leading-tight max-w-md">
+          Elevate your hosting experience.
+        </h1>
+        <p class="mt-4 text-lg max-w-sm" style="color: rgba(255,255,255,0.8);">
+          Manage your coastal properties with our premium owner dashboard.
+        </p>
+      </div>
+
+      <!-- Footer text -->
+      <div class="text-sm font-medium tracking-widest uppercase" style="opacity: 0.6;">
+        © 2024 Quy Nhon Rental Management
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Side: Login Form (40%) -->
+  <div class="w-full lg:w-[40%] flex items-center justify-center p-8" style="background-color: #f6f7f8;">
+    <div class="w-full max-w-md space-y-8">
+      
+      <!-- Card -->
+      <div class="bg-white p-8 rounded-xl shadow-sm border" style="border-color: #e2e8f0;">
+        
+        <!-- Header -->
+        <div class="flex flex-col space-y-2 text-center mb-8">
+          <h2 class="text-2xl font-semibold tracking-tight">Owner Login</h2>
+          <p class="text-sm" style="color: #64748b;">
+            Enter your credentials to access your dashboard
+          </p>
+        </div>
+
+        <!-- Form -->
+        <form class="space-y-6" ng-submit="login()">
+          <!-- Email -->
+          <div class="space-y-2">
+            <label class="text-sm font-medium leading-none" for="email">
+              Email Address
+            </label>
+            <input
+              class="form-input"
+              id="email"
+              ng-model="email"
+              placeholder="name@example.com"
+              type="email"
+              required
+            >
+          </div>
+
+          <!-- Password -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <label class="text-sm font-medium leading-none" for="password">
+                Password
+              </label>
+              <a class="text-sm font-medium hover:underline" style="color: #D4AF37;" href="#">
+                Forgot password?
+              </a>
+            </div>
+            <input
+              class="form-input"
+              id="password"
+              ng-model="password"
+              placeholder="••••••••"
+              type="password"
+              required
+            >
+          </div>
+
+          <!-- Submit -->
+          <button
+            class="btn btn-primary w-full h-12 text-sm font-medium"
+            type="submit"
+          >
+            Sign In
+          </button>
+        </form>
+
+        <!-- Divider -->
+        <div class="relative my-8">
+          <div class="absolute inset-0 flex items-center">
+            <span class="w-full border-t" style="border-color: #e2e8f0;"></span>
+          </div>
+          <div class="relative flex justify-center text-xs uppercase">
+            <span class="bg-white px-2" style="color: #64748b;">
+              Or continue with
+            </span>
+          </div>
+        </div>
+
+        <!-- Google Button -->
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium h-12 px-4 py-2 w-full gap-2 border bg-transparent transition-colors hover:bg-slate-50 cursor-pointer"
+          style="border-color: #e2e8f0;"
+          type="button"
+          ng-click="loginWithGoogle()"
+        >
+          <svg aria-hidden="true" class="h-4 w-4" role="img" viewBox="0 0 488 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" fill="currentColor"/>
+          </svg>
+          Login with Google
+        </button>
+
+        <!-- Register link -->
+        <p class="mt-8 text-center text-sm" style="color: #64748b;">
+          Don't have an account?
+          <a class="font-semibold hover:underline underline-offset-4" style="color: #175c78;" href="#!/register">
+            Register your property
+          </a>
+        </p>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="flex justify-center gap-6 text-xs" style="color: #94a3b8;">
+        <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+        <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+        <a class="hover:text-primary transition-colors" href="#">Support</a>
+      </div>
+    </div>
+  </div>
+</div>
